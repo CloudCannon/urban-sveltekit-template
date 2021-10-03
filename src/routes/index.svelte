@@ -1,16 +1,13 @@
 <script context="module">
 	// import { getCollectionItem, getCollection } from '$lib/collections';
-
 	export async function load({ fetch }) {
 		// const postsRes = await fetch('_posts.json');
 		// const posts = await postsRes.json();
-		
+
 		const res = await fetch('index.json', {params: {nice: 'meme'}});
 		const page = await res.json();
-
 		// const page = await getCollectionItem('pages', 'index');
 		// const clients = await getCollection('clients');
-
 		return {
 			props: {
 				page: JSON.parse(JSON.stringify(page))
@@ -22,7 +19,6 @@
 
 <script>
 	export let page;
-	console.log(page);
 	export let data = {
 		site: {
 			baseurl: '/'
@@ -33,7 +29,7 @@
 <section class="hero diagonal">
 	<div class="container">
 	  <h2>{page.title}</h2>
-	  
+
 	  <p class="subtext">{@html page.subtext_html}</p>
 	  <p><a class="button alt" href={`${data.site.baseurl}/contact`}>Contact Us</a></p>
 	</div>
@@ -42,8 +38,8 @@
 	<div class="container halves">
 	  <div>
 		<h3>{page.portfolio_heading}</h3>
-		<p>{@html page.portfolio_description_html}</p> 
-		
+		<p>{@html page.portfolio_description_html}</p>
+
 		<p><a href={`${data.site.baseurl}/portfolio`}>{page.portfolio_call_to_action} &rarr;</a></p>
 	  </div>
 	  <div>
@@ -64,8 +60,8 @@
 	<div class="container halves">
 	  <div>
 		<ul class="image-list">
-		  <li><img src={`${data.site.baseurl}/images/cloudcannon-logo-blue.svg`} width="250" style={{marginBottom: 40 + 'px'}} alt="CloudCannon Logo"/></li>
-		  <li><img src={`${data.site.baseurl}/images/jekyll-logo-black-red-transparent.png`} width="300" alt="Jekyll Logo"/></li>
+		  <li><img src="/images/cloudcannon-logo-blue.svg" width="250" style={{marginBottom: 40 + 'px'}} alt="CloudCannon Logo"/></li>
+		  <li><img src="/images/svelte-horizontal.png" width="300" alt="Jekyll Logo"/></li>
 		</ul>
 	  </div>
 	  <div>
@@ -74,4 +70,3 @@
 	  </div>
 	</div>
   </section>
-
