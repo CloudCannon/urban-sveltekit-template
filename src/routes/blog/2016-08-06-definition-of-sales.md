@@ -3,7 +3,7 @@ title: Definition of sales
 date: 2016-08-06
 categories:
   - sales
-author-staff-member: anna
+author_staff_member: anna
 show_comments: true
 ---
 

@@ -3,7 +3,7 @@ title: The history of marketing
 date: 2016-08-12
 categories:
   - marketing
-author-staff-member: james
+author_staff_member: james
 show_comments: true
 ---
 

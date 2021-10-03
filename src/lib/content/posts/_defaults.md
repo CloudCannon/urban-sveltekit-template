@@ -2,6 +2,6 @@
 title: 
 date: 
 categories:
-author-staff-member:
+author_staff_member:
 show_comments: true
 ---
