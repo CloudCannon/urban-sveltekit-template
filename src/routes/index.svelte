@@ -1,30 +1,32 @@
 <script context="module">
-	// import { getCollectionItem, getCollection } from '$lib/collections';
 	export async function load({ fetch }) {
-		// const postsRes = await fetch('_posts.json');
-		// const posts = await postsRes.json();
 
-		const res = await fetch('index.json', {params: {nice: 'meme'}});
-		const page = await res.json();
-		// const page = await getCollectionItem('pages', 'index');
-		// const clients = await getCollection('clients');
-		return {
-			props: {
-				page: JSON.parse(JSON.stringify(page))
-				// clients: JSON.parse(JSON.stringify(clients))
-			}
-		};
+		const res = await fetch('index.json');
+
+		if (res.ok) {
+			return {
+				props: res.json()
+			};
+		}
+
 	}
 </script>
 
 <script>
 	export let page;
+	export let clients;
+
+	export let clientsSlice = clients.slice(0, 4);
 	export let data = {
 		site: {
-			baseurl: '/'
+			baseurl: ''
 		}
 	}
 </script>
+
+<svelte:head>
+	<title>Urban | Urban Template</title>
+</svelte:head>
 
 <section class="hero diagonal">
 	<div class="container">
@@ -44,13 +46,13 @@
 	  </div>
 	  <div>
 		<ul class="image-grid">
-		  <!-- {clients.slice(0, 4).map((client, i) => (
-			<li  key={i}>
-			  <a href={`${data.site.baseurl}clients/${client.slug}`}>
-				<img src={client.image_path} alt={client.name}/>
-			  </a>
-			</li>
-		  ))} -->
+			{#each clientsSlice as client, index (index)}
+				<li>
+					<a href={`${data.site.baseurl}/clients/${client.slug}`}>
+						<img src={client.image_path} alt={client.name}/>
+					  </a>
+				</li>
+			{/each}
 		</ul>
 	  </div>
 	</div>
