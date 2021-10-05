@@ -14,7 +14,7 @@
 
 <script>
 	import PageLayout from '$lib/layouts/PageLayout.svelte';
-	import siteData from '$lib/data/site.json';
+	import siteData from '@content/data/site.json';
 	export let pageDetails;
 	export let clients;
 
