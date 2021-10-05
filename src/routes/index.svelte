@@ -48,9 +48,9 @@
 		<ul class="image-grid">
 			{#each clientsSlice as client, index (index)}
 				<li>
-					<!-- <a href={`${data.site.baseurl}/clients/${client.slug}`}>
+					<a href={`${data.site.baseurl}/clients/${client.slug}`}>
 						<img src={client.image_path} alt={client.name}/>
-					  </a> -->
+					  </a>
 				</li>
 			{/each}
 		</ul>
