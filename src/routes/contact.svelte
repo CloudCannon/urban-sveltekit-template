@@ -43,7 +43,7 @@
 <PageLayout {pageDetails}>
 <section class="diagonal">
 	<div class="container">
-	  <form action={`${siteData.baseurl}/contact-succes`} method="post" class="contact-form">
+	  <form action={`${siteData.baseurl}/contact-success`} method="post" class="contact-form">
 		<input type="hidden" name="_to" value={company.contact_email_address} />
 		<input type="text" name="_gotcha"/>
 
