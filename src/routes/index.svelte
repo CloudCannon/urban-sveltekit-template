@@ -62,7 +62,7 @@
 	<div class="container halves">
 	  <div>
 		<ul class="image-list">
-		  <li><img src="/images/cloudcannon-logo-blue.svg" width="250" style={{marginBottom: 40 + 'px'}} alt="CloudCannon Logo"/></li>
+		  <li><img src="/images/cloudcannon-logo-blue.svg" width="250" class="cloudcannon-logo" alt="CloudCannon Logo"/></li>
 		  <li><img src="/images/svelte-horizontal.png" width="300" alt="Jekyll Logo"/></li>
 		</ul>
 	  </div>
@@ -72,3 +72,9 @@
 	  </div>
 	</div>
   </section>
+
+  <style>
+	  img.cloudcannon-logo {
+		margin-bottom: 40px;
+	  }
+  </style>

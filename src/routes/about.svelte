@@ -23,7 +23,7 @@ export async function load({ fetch }) {
 <PageLayout {pageDetails}>
 	<section class="diagonal patterned">
 		<div class="container">
-			<p class="editor-link" style={{textAlign:'center'}}><a href="cloudcannon:collections/content/staff-members/" class="btn"><strong>&#9998;</strong>Manage Staff members</a></p>
+			<p class="editor-link"><a href="cloudcannon:collections/content/staff-members/" class="btn"><strong>&#9998;</strong>Manage Staff members</a></p>
 			  <ul class="image-grid">
 				{#each topStaff as staff, index (index)}
 					<li><AuthorCard author={staff} /></li>
@@ -32,3 +32,9 @@ export async function load({ fetch }) {
 		</div>
 	</section>
 </PageLayout>
+
+<style>
+	p.editor-link {
+		text-align: 'center';
+	}
+</style>
