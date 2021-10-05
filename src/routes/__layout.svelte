@@ -54,7 +54,7 @@
 				</li>
 				<li>{companyData.description}</li>
 				<li>
-					<a href="{`${siteData.baseurl}`}"> Subscribe with RSS</a>
+					<a href="{`${siteData.baseurl}/feed.xml`}"> Subscribe with RSS</a>
 				</li>
 			</ul>
 		</div>

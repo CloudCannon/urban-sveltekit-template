@@ -11,6 +11,7 @@
 </script>
 
 <script>
+	import PageLayout from '$lib/layouts/PageLayout.svelte';
 	import company from '$lib/data/company.json';
 	import siteData from '$lib/data/site.json';
 	import { onMount } from 'svelte';
@@ -38,6 +39,7 @@
 	})
 </script>
 
+<PageLayout {pageDetails}>
 <section class="diagonal">
 	<div class="container">
 	  <form action={`${siteData.baseurl}/contact-succes`} method="post" class="contact-form">
@@ -86,3 +88,4 @@
 	  </div>
 	</div>
   </section>
+</PageLayout>

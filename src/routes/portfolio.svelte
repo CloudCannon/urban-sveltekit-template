@@ -12,28 +12,31 @@ export async function load({ fetch }) {
 </script>
 
 <script>
+	import PageLayout from '$lib/layouts/PageLayout.svelte';
 	import siteData from '$lib/data/site.json';
 
-	export let clients;
+	export let pageDetails, clients;
 </script>
 
-<section class="diagonal patterned">
-	<div class="container">
-		<p class="editor-link" style={{textAlign:'center'}}><a href="cloudcannon:collections/content/clients/" class="btn"><strong>&#9998;</strong> Manage Clients</a></p>
-	  <ul class="image-grid">
-			{#each clients as client, index (index)}
-			  <li>
-				<a href={`${siteData.baseurl}/clients/${client.slug}`}>
-				  <img src={client.image_path } alt={ client.name }/>
-				  <div class="details">
-					<div class="name">{ client.name }</div>
-					<div class="position">{ client.subtitle }</div>
-				  </div>
-				</a>
-			  </li>
-			{/each}
-		<li class="filler"></li>
-		<li class="filler"></li>
-	  </ul>
-	</div>
-  </section>
+<PageLayout {pageDetails}>
+	<section class="diagonal patterned">
+		<div class="container">
+			<p class="editor-link" style={{textAlign:'center'}}><a href="cloudcannon:collections/content/clients/" class="btn"><strong>&#9998;</strong> Manage Clients</a></p>
+		  <ul class="image-grid">
+				{#each clients as client, index (index)}
+				  <li>
+					<a href={`${siteData.baseurl}/clients/${client.slug}`}>
+					  <img src={client.image_path } alt={ client.name }/>
+					  <div class="details">
+						<div class="name">{ client.name }</div>
+						<div class="position">{ client.subtitle }</div>
+					  </div>
+					</a>
+				  </li>
+				{/each}
+			<li class="filler"></li>
+			<li class="filler"></li>
+		  </ul>
+		</div>
+	  </section>
+</PageLayout>
