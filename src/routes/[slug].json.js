@@ -9,11 +9,15 @@ export async function get({ params }) {
 		const author = await getCollectionItem('staff-members', post.author_staff_member);
 		return { ...post, author };
 	}));
+	const clients = await getCollection('clients');
+	const staffMembers = await getCollection('staff-members');
 
 	return {
 		body: {
 			pageDetails,
-			posts
+			posts,
+			clients,
+			staffMembers
 		}
 	};
 }

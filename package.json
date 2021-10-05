@@ -7,6 +7,7 @@
     "preview": "svelte-kit preview"
   },
   "devDependencies": {
+    "@googlemaps/js-api-loader": "^1.12.4",
     "@sveltejs/adapter-static": "^1.0.0-next.20",
     "@sveltejs/kit": "next",
     "gray-matter": "^4.0.3",

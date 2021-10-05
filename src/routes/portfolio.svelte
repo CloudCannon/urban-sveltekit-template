@@ -1,0 +1,39 @@
+<script context="module">
+
+export async function load({ fetch }) {
+	const res = await fetch('portfolio.json');
+
+	if (res.ok) {
+		return {
+			props: res.json()
+		};
+	}
+}
+</script>
+
+<script>
+	import siteData from '$lib/data/site.json';
+
+	export let clients;
+</script>
+
+<section class="diagonal patterned">
+	<div class="container">
+		<p class="editor-link" style={{textAlign:'center'}}><a href="cloudcannon:collections/content/clients/" class="btn"><strong>&#9998;</strong> Manage Clients</a></p>
+	  <ul class="image-grid">
+			{#each clients as client, index (index)}
+			  <li>
+				<a href={`${siteData.baseurl}/clients/${client.slug}`}>
+				  <img src={client.image_path } alt={ client.name }/>
+				  <div class="details">
+					<div class="name">{ client.name }</div>
+					<div class="position">{ client.subtitle }</div>
+				  </div>
+				</a>
+			  </li>
+			{/each}
+		<li class="filler"></li>
+		<li class="filler"></li>
+	  </ul>
+	</div>
+  </section>
