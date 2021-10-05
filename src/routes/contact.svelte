@@ -24,20 +24,18 @@
 
 	onMount(async () => {
 		if (browser) {
-
 			const loader = new Loader({
 				apiKey: siteData.google_maps_javascript_api_key,
 				version: 'weekly',
 			});
 
-			loader.load().then((google) => {
-				new google.maps.Map(mapEl, {
-					center: {lat: pageDetails.map.latitude, lng: pageDetails.map.longitude},
-					zoom: pageDetails.map.zoom,
-				});
-    		});
+			const google = await loader.load();
+			new google.maps.Map(mapEl, {
+				center: {lat: pageDetails.map.latitude, lng: pageDetails.map.longitude},
+				zoom: pageDetails.map.zoom,
+			});
 		}
-	})
+	});
 </script>
 
 <PageLayout {pageDetails}>
