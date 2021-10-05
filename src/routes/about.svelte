@@ -17,7 +17,7 @@ export async function load({ fetch }) {
 
 	export let staffMembers, pageDetails;
 
-	export let topStaff = staffMembers.slice(0,2);
+	let topStaff = staffMembers.slice(0,2);
 </script>
 
 <Page {pageDetails}>

@@ -18,7 +18,7 @@
 	export let pageDetails;
 	export let clients;
 
-	export let clientsPreview = clients.slice(0, 4);
+	let clientsPreview = clients.slice(0, 4);
 </script>
 
 <Page {pageDetails} withContactButton=true>

@@ -7,7 +7,7 @@
 	import siteData from '@content/data/site.json'
 	import Icon from '$lib/components/Icon.svelte'
 
-	export let navLinks = links;
+	let navLinks = links;
 	$: active_tab = `${$page.path}/`;
 </script>
 
