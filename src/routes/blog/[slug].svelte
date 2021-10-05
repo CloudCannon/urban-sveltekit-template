@@ -14,7 +14,7 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/components/PageLayout.svelte';
+	import Page from '$lib/components/Page.svelte';
 	import AuthorCard from '$lib/components/AuthorCard.svelte';
 	import PostSummary from '$lib/components/PostSummary.svelte'
 	import PostDetails from '$lib/components/PostDetails.svelte'
@@ -22,7 +22,7 @@
 	export let pageDetails, author, nextPost;
 </script>
 
-<PageLayout {pageDetails}>
+<Page {pageDetails}>
 <section class="diagonal">
 	<div class="blog-post text-container">
 		<PostDetails post={pageDetails}/>
@@ -48,4 +48,4 @@
 	</div>
 </section>
 {/if}
-</PageLayout>
+</Page>

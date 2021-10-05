@@ -11,7 +11,7 @@ export async function load({ fetch }) {
 </script>
 
 <script>
-	import PageLayout from '$lib/components/PageLayout.svelte';
+	import Page from '$lib/components/Page.svelte';
 	import AuthorCard from "$lib/components/AuthorCard.svelte";
 
 
@@ -20,7 +20,7 @@ export async function load({ fetch }) {
 	export let topStaff = staffMembers.slice(0,2);
 </script>
 
-<PageLayout {pageDetails}>
+<Page {pageDetails}>
 	<section class="diagonal patterned">
 		<div class="container">
 			<p class="editor-link"><a href="cloudcannon:collections/content/staff-members/" class="btn"><strong>&#9998;</strong>Manage Staff members</a></p>
@@ -31,7 +31,7 @@ export async function load({ fetch }) {
 			</ul>
 		</div>
 	</section>
-</PageLayout>
+</Page>
 
 <style>
 	p.editor-link {

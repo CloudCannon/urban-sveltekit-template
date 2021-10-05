@@ -13,7 +13,7 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/components/PageLayout.svelte';
+	import Page from '$lib/components/Page.svelte';
 	import siteData from '@content/data/site.json';
 	export let pageDetails;
 	export let clients;
@@ -21,7 +21,7 @@
 	export let clientsPreview = clients.slice(0, 4);
 </script>
 
-<PageLayout {pageDetails} withContactButton=true>
+<Page {pageDetails} withContactButton=true>
 <section class="diagonal patterned">
 	<div class="container halves">
 		<div>
@@ -59,7 +59,7 @@
 	</div>
 </section>
 
-</PageLayout>
+</Page>
 
 <style>
 img.cloudcannon-logo {

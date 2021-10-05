@@ -11,7 +11,7 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/components/PageLayout.svelte';
+	import Page from '$lib/components/Page.svelte';
 	import company from '@content/data/company.json';
 	import siteData from '@content/data/site.json';
 	import { onMount } from 'svelte';
@@ -38,7 +38,7 @@
 	});
 </script>
 
-<PageLayout {pageDetails}>
+<Page {pageDetails}>
 <section class="diagonal">
 	<div class="container">
 	  <form action={`${siteData.baseurl}/contact-success`} method="post" class="contact-form">
@@ -87,7 +87,7 @@
 	  </div>
 	</div>
   </section>
-</PageLayout>
+</Page>
 
 <style>
 	input[name="_gotcha"] {

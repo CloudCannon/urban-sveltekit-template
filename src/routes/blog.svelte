@@ -12,14 +12,14 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/components/PageLayout.svelte';
+	import Page from '$lib/components/Page.svelte';
 	import PostSummary from "$lib/components/PostSummary.svelte";
 
 	export let posts, pageDetails;
 </script>
 
 
-<PageLayout {pageDetails}>
+<Page {pageDetails}>
 	<section class="diagonal">
 		<div class="text-container">
 			<p class="editor-link"><a href="cloudcannon:collections/content/posts" class="btn"><strong>&#9998;</strong> Add Post</a></p>
@@ -32,4 +32,4 @@
 		</ul>
 		</div>
 	</section>
-</PageLayout>
+</Page>

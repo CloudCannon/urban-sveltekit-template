@@ -12,13 +12,13 @@ export async function load({ fetch }) {
 </script>
 
 <script>
-	import PageLayout from '$lib/components/PageLayout.svelte';
+	import Page from '$lib/components/Page.svelte';
 	import siteData from '@content/data/site.json';
 
 	export let pageDetails, clients;
 </script>
 
-<PageLayout {pageDetails}>
+<Page {pageDetails}>
 	<section class="diagonal patterned">
 		<div class="container">
 			<p class="editor-link"><a href="cloudcannon:collections/content/clients/" class="btn"><strong>&#9998;</strong> Manage Clients</a></p>
@@ -39,7 +39,7 @@ export async function load({ fetch }) {
 		  </ul>
 		</div>
 	  </section>
-</PageLayout>
+</Page>
 
 <style>
 	p.editor-link {
