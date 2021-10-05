@@ -5,6 +5,7 @@
 	import footerData from '$lib/data/footer.json'
 	import companyData from '$lib/data/company.json'
 	import siteData from '$lib/data/site.json'
+	import Icon from '$lib/components/icon.svelte'
 
 	export let navLinks = links;
 	$: active_tab = `${$page.path}/`;
@@ -42,7 +43,9 @@
 
 					{#each column.links as link, index (index)}
 						<li>
-							<a href="{link.link}" target="{link.new_window ? '_blank' : '_self'}">{link.name}</a>
+							<a href="{link.link}" target="{link.new_window ? '_blank' : '_self'}">
+								{#if link.social_icon} <Icon icon={link.social_icon}/>{/if}{link.name}
+							</a>
 						</li>
 					{/each}
 				</ul>
@@ -54,7 +57,7 @@
 				</li>
 				<li>{companyData.description}</li>
 				<li>
-					<a href="{`${siteData.baseurl}/feed.xml`}"> Subscribe with RSS</a>
+					<a href="{`${siteData.baseurl}/feed.xml`}"><Icon icon="RSS"/> Subscribe with RSS</a>
 				</li>
 			</ul>
 		</div>
