@@ -13,21 +13,9 @@
 </script>
 
 <script>
+	import PageLayout from '$lib/layouts/PageLayout.svelte';
 	export let pageDetails;
 </script>
 
 
-<svelte:head>
-	<title>{pageDetails.title} | Urban Template</title>
-</svelte:head>
-
-<section class="hero diagonal">
-	<div class="container">
-	{#if (pageDetails.heading || pageDetails.title)}
-		<h2>{ pageDetails.title }</h2>
-	{/if}
-	{#if pageDetails.subtitle}
-		<p class="subtext">{ pageDetails.subtitle }</p>
-	{/if}
-	</div>
-</section>
+<PageLayout {pageDetails}/>

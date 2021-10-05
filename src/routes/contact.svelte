@@ -16,6 +16,7 @@
 	import siteData from '@content/data/site.json';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
+	import { Loader } from '@googlemaps/js-api-loader';
 
 	export let pageDetails;
 
@@ -23,7 +24,7 @@
 
 	onMount(async () => {
 		if (browser) {
-			const { Loader } = await import('@googlemaps/js-api-loader');
+			
 			const loader = new Loader({
 				apiKey: siteData.google_maps_javascript_api_key,
 				version: 'weekly',
@@ -42,9 +43,9 @@
 <PageLayout {pageDetails}>
 <section class="diagonal">
 	<div class="container">
-	  <form action={`${siteData.baseurl}/contact-succes`} method="post" class="contact-form">
+	  <form action={`${siteData.baseurl}/contact-success`} method="post" class="contact-form">
 		<input type="hidden" name="_to" value={company.contact_email_address} />
-		<input type="text" name="_gotcha" style="display: 'none;'"/>
+		<input type="text" name="_gotcha"/>
 
 		<div class="halves">
 		  <div>
@@ -89,3 +90,9 @@
 	</div>
   </section>
 </PageLayout>
+
+<style>
+	input[name="_gotcha"] {
+		display: none;
+	}
+</style>

@@ -21,7 +21,7 @@ export async function load({ fetch }) {
 <PageLayout {pageDetails}>
 	<section class="diagonal patterned">
 		<div class="container">
-			<p class="editor-link" style={{textAlign:'center'}}><a href="cloudcannon:collections/content/clients/" class="btn"><strong>&#9998;</strong> Manage Clients</a></p>
+			<p class="editor-link"><a href="cloudcannon:collections/content/clients/" class="btn"><strong>&#9998;</strong> Manage Clients</a></p>
 		  <ul class="image-grid">
 				{#each clients as client, index (index)}
 				  <li>
@@ -40,3 +40,9 @@ export async function load({ fetch }) {
 		</div>
 	  </section>
 </PageLayout>
+
+<style>
+	p.editor-link {
+		text-align: 'center';
+	}
+</style>

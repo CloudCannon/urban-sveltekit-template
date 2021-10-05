@@ -13,8 +13,7 @@
     "gray-matter": "^4.0.3",
     "markdown-it": "^12.2.0",
     "sass": "^1.42.1",
-    "svelte": "^3.42.6",
-    "svelte-preprocess": "^4.9.8"
+    "svelte": "^3.42.6"
   },
   "type": "module"
 }
