@@ -1,6 +1,6 @@
 # Urban
 
-Web Agency themed business template for SvelteKit.
+Web Agency themed business template for SvelteKit. Browse through a [live demo](https://dry-duck.cloudvent.net).
 Increase the web presence of your agency with this configurable theme.
 
 ![Urban template screenshot](static/images/_screenshot.png)
