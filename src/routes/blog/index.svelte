@@ -12,8 +12,8 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/layouts/PageLayout.svelte';
-	import PostSummary from "$lib/components/post-summary.svelte";
+	import PageLayout from '$lib/components/PageLayout.svelte';
+	import PostSummary from "$lib/components/PostSummary.svelte";
 
 	export let posts, pageDetails;
 </script>

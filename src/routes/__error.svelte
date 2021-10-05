@@ -10,7 +10,7 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/layouts/PageLayout.svelte';
+	import PageLayout from '$lib/components/PageLayout.svelte';
 </script>
 
 <PageLayout pageDetails={{title: 'Not Found'}}>

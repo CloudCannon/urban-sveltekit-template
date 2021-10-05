@@ -12,7 +12,7 @@ export async function load({ fetch }) {
 </script>
 
 <script>
-	import PageLayout from '$lib/layouts/PageLayout.svelte';
+	import PageLayout from '$lib/components/PageLayout.svelte';
 	import siteData from '@content/data/site.json';
 
 	export let pageDetails, clients;

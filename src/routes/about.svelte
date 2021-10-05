@@ -11,8 +11,8 @@ export async function load({ fetch }) {
 </script>
 
 <script>
-	import PageLayout from '$lib/layouts/PageLayout.svelte';
-	import AuthorCard from "$lib/components/author-card.svelte";
+	import PageLayout from '$lib/components/PageLayout.svelte';
+	import AuthorCard from "$lib/components/AuthorCard.svelte";
 
 
 	export let staffMembers, pageDetails;

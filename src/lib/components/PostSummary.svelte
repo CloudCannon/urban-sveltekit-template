@@ -1,5 +1,5 @@
 <script>
-	import PostDetails from '$lib/components/post-details.svelte';
+	import PostDetails from '$lib/components/PostDetails.svelte';
 	import siteData from '@content/data/site.json'
 
 	export let post;

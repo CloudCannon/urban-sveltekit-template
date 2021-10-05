@@ -11,7 +11,7 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/layouts/PageLayout.svelte';
+	import PageLayout from '$lib/components/PageLayout.svelte';
 	import company from '@content/data/company.json';
 	import siteData from '@content/data/site.json';
 	import { onMount } from 'svelte';
@@ -24,7 +24,7 @@
 
 	onMount(async () => {
 		if (browser) {
-			
+
 			const loader = new Loader({
 				apiKey: siteData.google_maps_javascript_api_key,
 				version: 'weekly',

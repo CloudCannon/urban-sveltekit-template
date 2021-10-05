@@ -14,10 +14,10 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/layouts/PageLayout.svelte';
-	import AuthorCard from '$lib/components/author-card.svelte';
-	import PostSummary from '$lib/components/post-summary.svelte'
-	import PostDetails from '$lib/components/post-details.svelte'
+	import PageLayout from '$lib/components/PageLayout.svelte';
+	import AuthorCard from '$lib/components/AuthorCard.svelte';
+	import PostSummary from '$lib/components/PostSummary.svelte'
+	import PostDetails from '$lib/components/PostDetails.svelte'
 
 	export let pageDetails, author, nextPost;
 </script>

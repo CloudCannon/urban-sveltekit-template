@@ -5,7 +5,7 @@
 	import footerData from '@content/data/footer.json'
 	import companyData from '@content/data/company.json'
 	import siteData from '@content/data/site.json'
-	import Icon from '$lib/components/icon.svelte'
+	import Icon from '$lib/components/Icon.svelte'
 
 	export let navLinks = links;
 	$: active_tab = `${$page.path}/`;

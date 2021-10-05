@@ -14,7 +14,7 @@
 </script>
 
 <script>
-	import PageLayout from '$lib/layouts/PageLayout.svelte';
+	import PageLayout from '$lib/components/PageLayout.svelte';
 	export let pageDetails;
 </script>
 
