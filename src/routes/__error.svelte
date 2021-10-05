@@ -13,10 +13,6 @@
 	import PageLayout from '$lib/layouts/PageLayout.svelte';
 </script>
 
-<svelte:head>
-	<title>Page Not Found</title>
-</svelte:head>
-
 <PageLayout pageDetails={{title: 'Not Found'}}>
 	<section class="diagonal">
 		<div class="container">
