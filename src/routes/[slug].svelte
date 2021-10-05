@@ -1,6 +1,7 @@
 <script context="module">
 	export async function load({ page, fetch }) {
-		const url = `/contact-success.json`;
+		const { slug } = page.params;
+		const url = `/${slug}.json`;
 
 		const res = await fetch(url);
 
