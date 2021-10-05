@@ -1,5 +1,5 @@
 <script>
-	import companyData from '$lib/data/company.json'
+	import companyData from '@content/data/company.json'
 
 	export let pageDetails = {}
 	export let title = pageDetails.heading ?  pageDetails.heading  : pageDetails.title;

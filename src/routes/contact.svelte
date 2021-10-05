@@ -12,8 +12,8 @@
 
 <script>
 	import PageLayout from '$lib/layouts/PageLayout.svelte';
-	import company from '$lib/data/company.json';
-	import siteData from '$lib/data/site.json';
+	import company from '@content/data/company.json';
+	import siteData from '@content/data/site.json';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/env';
 

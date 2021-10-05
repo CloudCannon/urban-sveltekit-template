@@ -1,6 +1,6 @@
 <script>
 	import PostDetails from '$lib/components/post-details.svelte';
-	import siteData from '$lib/data/site.json'
+	import siteData from '@content/data/site.json'
 
 	export let post;
 </script>

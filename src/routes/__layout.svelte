@@ -1,10 +1,10 @@
 <script>
 	import '$lib/styles/main.scss';
 	import { page } from '$app/stores';
-	import { links } from '$lib/data/navigation.json'
-	import footerData from '$lib/data/footer.json'
-	import companyData from '$lib/data/company.json'
-	import siteData from '$lib/data/site.json'
+	import { links } from '@content/data/navigation.json'
+	import footerData from '@content/data/footer.json'
+	import companyData from '@content/data/company.json'
+	import siteData from '@content/data/site.json'
 	import Icon from '$lib/components/icon.svelte'
 
 	export let navLinks = links;

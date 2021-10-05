@@ -1,28 +1,27 @@
 module.exports = {
-    _comments: {
-      title: 'The title of your page.'
-    },
     _select_data: {
-      categories: ['sales', 'tips', 'marketing', 'growth']
+      social_icons: ['Facebook', 'Instagram', 'LinkedIn', 'Pinterest', 'Tumblr', 'Twitter', 'Youtube', 'RSS']
     },
+
     paths: {
       collections: 'content',
-      data: 'src/lib/data',
+      data: 'content/data',
       static: 'public',
       uploads: 'public/uploads'
     },
+
     'collections-config': {
-      data: { path: 'src/lib/data' },
+      data: { path: 'content/data' },
       clients: {
         path: 'content/clients',
         url: '/clients/[slug]',
-        "output": true,
+        'output': true,
         name: 'Clients'
       },
       webpages: {
         path: 'content/pages',
         url: '/[slug]',
-        "output": true,
+        'output': true,
         name: 'Pages',
         _icon: 'wysiwyg',
         _enabled_editors: ['visual','content']
@@ -34,7 +33,7 @@ module.exports = {
       },
       posts: {
         path: 'content/posts',
-        "output": true,
+        'output': true,
         url: '/blog/[slug]',
         name: 'Blog'
       }

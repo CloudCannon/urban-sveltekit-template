@@ -1,5 +1,6 @@
 import adapter from '@sveltejs/adapter-static';
 import sveltePreprocess from 'svelte-preprocess';
+import path from 'path';
 
 const config = {
 	extensions: ['.svelte'],
@@ -15,7 +16,15 @@ const config = {
 			pages: 'build',
 			assets: 'build',
 			fallback: null
-		})
+		}),
+
+		vite: {
+			resolve: {
+				alias: {
+					'@content': path.resolve('./content')
+				}
+			}
+		}
 	}
 };
 

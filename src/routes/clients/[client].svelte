@@ -15,7 +15,7 @@
 </script>
 
 <script>
-	import siteData from '$lib/data/site.json'
+	import siteData from '@content/data/site.json'
 
 	export let page, portfolio;
 </script>
