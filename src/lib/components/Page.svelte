@@ -11,7 +11,7 @@
 	$: heading = pageDetails.heading || pageDetails.title;
 	$: browserTitle = pageDetails.title ? `${pageDetails.title} | ${seoData.site_title}` : seoData.site_title;
 	$: description = pageDetails.description || seoData.description;
-	$: canonical = `${siteData.url}/${$pageDetails.path}`.replace(/\/+/g, '/');
+	$: canonical = `${siteData.url}/${pageDetails.path}`.replace(/\/+/g, '/');
 
 	const images = seoData.images.map((image) => ({
 		url: image.image,
