@@ -8,6 +8,10 @@ const config = {
 		adapter: adapter(),
 		target: '#svelte',
 
+		prerender: {
+			entries: ['*', '/contact-success'],
+		},
+
 		vite: {
 			resolve: {
 				alias: {
