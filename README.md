@@ -15,7 +15,6 @@ Find more templates, themes and tutorials at [CloudCannon Academy](https://learn
 * Contact form
 * Pre-built pages
 * Pre-styled components
-* Disqus comments for posts
 * Staff and author system
 * Configurable footer
 * Optimised for editing in [CloudCannon](https://cloudcannon.com/)
@@ -26,7 +25,7 @@ Find more templates, themes and tutorials at [CloudCannon Academy](https://learn
 ## Setup
 
 1. Add your site and author details in `data/seo.json`.
-2. Add your Google Analytics and Disqus keys to `data/site.json`.
+2. Add your Google Analytics key to `data/site.json`.
 3. Get a workflow going to see your site's output (with [CloudCannon](https://app.cloudcannon.com/) or SvelteKit locally).
 
 ## Develop
