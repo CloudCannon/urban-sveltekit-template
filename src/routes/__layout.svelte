@@ -9,6 +9,12 @@
 
 	let navLinks = links;
 	$: active_tab = `${$page.path}/`;
+
+
+	const toggleNav = function () {
+		document.body.classList.toggle("nav-open");
+		return false;
+	};
 </script>
 
 <header>
@@ -19,7 +25,7 @@
 			</a>
 		</h1>
 		<nav>
-			<a class="nav-toggle" id="open-nav" href="/">&#9776;</a>
+			<a class="nav-toggle" id="open-nav" on:click={toggleNav}>&#9776;</a>
 			<ul>
 				{#each navLinks as navLink}
 					<li><a class="{active_tab === navLink.link ? "active" : ""}" href="{navLink.link}">{navLink.name}</a></li>
