@@ -5,7 +5,9 @@
 
 	export let withContactButton = false;
 	export let pageDetails = {};
-	$: title = pageDetails.heading ?  pageDetails.heading : pageDetails.title;
+	export let headingEl;
+
+	$: heading = pageDetails.heading || pageDetails.title;
 	$: browserTitle = pageDetails.title ? `${pageDetails.title} | ${seoData.site_title}` : seoData.site_title;
 </script>
 
@@ -17,18 +19,21 @@
 
 <section class="hero diagonal">
 	<div class="container">
-	{#if pageDetails.heading || pageDetails.title}
-		<h2>{ title }</h2>
-	{/if}
-	{#if pageDetails.subtitle }
+		{#if headingEl }
+			<h2>{@html headingEl }</h2>
+		{:else if heading }
+			<h2>{ heading }</h2>
+		{/if}
+
+		{#if pageDetails.subtitle }
 		<p class="subtext">{ pageDetails.subtitle }</p>
-	{/if}
-	{#if pageDetails.subtext_html }
+		{/if}
+		{#if pageDetails.subtext_html }
 		<p class="subtext">{@html pageDetails.subtext_html }</p>
-	{/if}
-	{#if withContactButton}
+		{/if}
+		{#if withContactButton }
 		<p><a class="button alt" href={`${siteData.baseurl}/contact`}>Contact Us</a></p>
-	{/if}
+		{/if}
 	</div>
 </section>
 

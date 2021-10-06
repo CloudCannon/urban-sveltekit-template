@@ -15,38 +15,27 @@
 </script>
 
 <script>
-	import siteData from '@content/data/site.json'
+	import Page from '$lib/components/Page.svelte';
+	import siteData from '@content/data/site.json';
 
-	export let page, portfolio;
+	export let pageDetails, portfolio;
+	let headingEl = portfolio.heading
+		? `<a href="${siteData.baseurl}/portfolio">${portfolio.heading}</a><span>&nbsp;/${pageDetails.name}</span>`
+		: '';
 </script>
 
+<Page {pageDetails} {headingEl}>
 
-<svelte:head>
-	<title>{page.name} | Urban Template</title>
-</svelte:head>
-
-<section class="hero diagonal">
-	<div class="container">
-		{#if portfolio.heading}
-			<h2>
-				<a href={`${siteData.baseurl}/portfolio`}>{ portfolio.heading }</a><span>&nbsp;/ {page.name}</span>
-			</h2>
-		{/if}
-		{#if page.subtitle}
-			<p class="subtext">{ page.subtitle }</p>
-		{/if}
-	</div>
-</section>
-
-<section class="diagonal">
-	<div class="container">
-		<p>
-			<img src={ page.image_path } class="screenshot" alt={page.title}/></p>
-		<div>
-			 <div class="post-content">
-				 {@html page.content_html}
-			 </div>
+	<section class="diagonal">
+		<div class="container">
+			<p>
+				<img src={ pageDetails.image_path } class="screenshot" alt={pageDetails.title}/></p>
+			<div>
+				<div class="post-content">
+					{@html pageDetails.content_html}
+				</div>
+			</div>
+			<p><a href={ pageDetails.external_url }>View { pageDetails.name } &rarr;</a></p>
 		</div>
-		<p><a href={ page.external_url }>View { page.name } &rarr;</a></p>
-	</div>
-</section>
+	</section>
+</Page>
