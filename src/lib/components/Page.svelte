@@ -3,6 +3,7 @@
 	import companyData from '@content/data/company.json';
 	import siteData from '@content/data/site.json';
 	import seoData from '@content/data/seo.json';
+	import { page } from '$app/stores';
 	import GoogleAnalytics from '$lib/components/GoogleAnalytics.svelte';
 
 	export let withContactButton = false;
@@ -11,7 +12,7 @@
 	$: heading = pageDetails.heading || pageDetails.title;
 	$: browserTitle = pageDetails.title ? `${pageDetails.title} | ${seoData.site_title}` : seoData.site_title;
 	$: description = pageDetails.description || seoData.description;
-	$: canonical = `${siteData.url}/${pageDetails.path}`.replace(/\/+/g, '/');
+	$: canonical = `${siteData.url}/${$page.path}`.replace(/\/+/g, '/');
 
 	const images = seoData.images.map((image) => ({
 		url: image.image,
