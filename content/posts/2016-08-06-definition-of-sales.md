@@ -1,5 +1,6 @@
 ---
 title: Definition of sales
+description:
 date: 2016-08-06
 categories:
   - sales

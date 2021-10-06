@@ -1,6 +1,7 @@
 ---
 name: Malt Template
 subtitle: Event marketing template for Jekyll
+description:
 external_url: https://github.com/CloudCannon/malt-jekyll-template
 image_path: /images/clients/malt.jpg
 ---

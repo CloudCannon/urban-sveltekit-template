@@ -2,6 +2,7 @@
 title: Contact
 heading: Get in touch today
 subtitle: We'd love to help your business.
+description:
 map:
   latitude: -45.8787605
   longitude: 170.5027976

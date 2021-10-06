@@ -1,32 +1,45 @@
 <script>
-	import { dev } from '$app/env';
+	import SvelteSeo from 'svelte-seo';
 	import companyData from '@content/data/company.json';
 	import siteData from '@content/data/site.json';
 	import seoData from '@content/data/seo.json';
-	import { onMount } from 'svelte';
-	import { browser } from '$app/env';
+	import GoogleAnalytics from '$lib/components/GoogleAnalytics.svelte';
 
 	export let withContactButton = false;
 	export let pageDetails = {};
 
 	$: heading = pageDetails.heading || pageDetails.title;
 	$: browserTitle = pageDetails.title ? `${pageDetails.title} | ${seoData.site_title}` : seoData.site_title;
+	$: description = pageDetails.description || seoData.description;
+	$: canonical = `${siteData.url}/${$pageDetails.path}`.replace(/\/+/g, '/');
 
-	onMount(() => {
-		if (browser && !dev && siteData.google_analytics_key) {
-			window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-			ga('create', siteData.google_analytics_key, 'auto');
-			ga('send', 'pageview');
-		}
-	});
+	const images = seoData.images.map((image) => ({
+		url: image.image,
+		width: image.height,
+		height: image.width,
+		alt: image.description
+	}));
 </script>
+
+<SvelteSeo
+	title={heading}
+	canonical={canonical}
+	description={description}
+	openGraph={{
+		site_name: seoData.site_name,
+		url: siteData.url,
+		title: heading,
+		description: description,
+		images: images
+	}}
+/>
+
+<GoogleAnalytics />
 
 <svelte:head>
 	<title>{ browserTitle }</title>
 	<link rel="alternate" type="application/rss+xml" title="{companyData.company_name}" href="/feed.xml" />
 	<link rel="sitemap" type="application/xml" title="{companyData.company_name} - Sitemap" href="/sitemap.xml" />
-
-	<script async src='https://www.google-analytics.com/analytics.js'></script>
 </svelte:head>
 
 <section class="hero diagonal">

@@ -1,6 +1,7 @@
 ---
 name: Frisco Template
 subtitle: App marketing template for Jekyll
+description:
 external_url: https://github.com/CloudCannon/frisco-jekyll-template
 image_path: /images/clients/frisco.jpg
 ---

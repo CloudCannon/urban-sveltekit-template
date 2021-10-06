@@ -1,5 +1,6 @@
 ---
 title: Effective upselling techniques
+description:
 date: 2016-07-28T00:00:00Z
 categories:
   - sales

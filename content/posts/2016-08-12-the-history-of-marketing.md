@@ -1,5 +1,6 @@
 ---
 title: The history of marketing
+description:
 date: 2016-08-12
 categories:
   - marketing
