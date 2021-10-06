@@ -19,13 +19,12 @@
 	import siteData from '@content/data/site.json';
 
 	export let pageDetails, portfolio;
-	let headingEl = portfolio.heading
-		? `<a href="${siteData.baseurl}/portfolio">${portfolio.heading}</a><span>&nbsp;/${pageDetails.name}</span>`
-		: '';
 </script>
 
-<Page {pageDetails} {headingEl}>
-
+<Page {pageDetails}>
+	<h2 slot="heading">
+		<a href="{siteData.baseurl}/portfolio">{portfolio.heading}</a> <span>/ {pageDetails.name}</span>
+	</h2>
 	<section class="diagonal">
 		<div class="container">
 			<p>
