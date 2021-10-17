@@ -8,17 +8,26 @@
 				props: res.json()
 			};
 		}
-
 	}
 </script>
 
 <script>
+	import { onDestroy, onMount } from 'svelte';
 	import Page from '$lib/components/Page.svelte';
+	import { onCloudCannonChanges, stopCloudCannonChanges } from '$lib/cloudcannon.js';
 	import siteData from '@content/data/site.json';
 	export let pageDetails;
 	export let clients;
 
 	let clientsPreview = clients.slice(0, 4);
+
+	onMount(async () => {
+		onCloudCannonChanges((newProps) => pageDetails = newProps);
+	});
+
+	onDestroy(async () => {
+		stopCloudCannonChanges();
+	});
 </script>
 
 <Page {pageDetails} withContactButton=true>

@@ -14,8 +14,18 @@ export async function load({ fetch }) {
 <script>
 	import Page from '$lib/components/Page.svelte';
 	import siteData from '@content/data/site.json';
+	import { onMount, onDestroy } from 'svelte';
+	import { onCloudCannonChanges, stopCloudCannonChanges } from '$lib/cloudcannon.js';
 
 	export let pageDetails, clients;
+
+	onMount(async () => {
+		onCloudCannonChanges((newProps) => pageDetails = newProps);
+	});
+
+	onDestroy(async () => {
+		stopCloudCannonChanges();
+	});
 </script>
 
 <Page {pageDetails}>

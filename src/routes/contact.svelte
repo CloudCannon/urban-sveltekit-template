@@ -14,7 +14,8 @@
 	import Page from '$lib/components/Page.svelte';
 	import company from '@content/data/company.json';
 	import siteData from '@content/data/site.json';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
+	import { onCloudCannonChanges, stopCloudCannonChanges } from '$lib/cloudcannon.js';
 	import { browser } from '$app/env';
 	import { Loader } from '@googlemaps/js-api-loader';
 
@@ -23,6 +24,7 @@
 	let mapEl;
 
 	onMount(async () => {
+		onCloudCannonChanges((newProps) => pageDetails = newProps);
 		if (browser) {
 			const loader = new Loader({
 				apiKey: siteData.google_maps_javascript_api_key,
@@ -35,6 +37,10 @@
 				zoom: pageDetails.map.zoom,
 			});
 		}
+	});
+
+	onDestroy(async () => {
+		stopCloudCannonChanges();
 	});
 </script>
 

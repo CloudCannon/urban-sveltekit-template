@@ -11,13 +11,22 @@ export async function load({ fetch }) {
 </script>
 
 <script>
+	import { onDestroy, onMount } from 'svelte';
+	import { onCloudCannonChanges, stopCloudCannonChanges } from '$lib/cloudcannon.js';
 	import Page from '$lib/components/Page.svelte';
 	import AuthorCard from "$lib/components/AuthorCard.svelte";
-
 
 	export let staffMembers, pageDetails;
 
 	let topStaff = staffMembers.slice(0,2);
+
+	onMount(async () => {
+		onCloudCannonChanges((newProps) => pageDetails = newProps);
+	});
+	
+	onDestroy(async () => {
+		stopCloudCannonChanges();
+	});
 </script>
 
 <Page {pageDetails}>

@@ -14,8 +14,18 @@
 <script>
 	import Page from '$lib/components/Page.svelte';
 	import PostSummary from "$lib/components/PostSummary.svelte";
+	import { onMount, onDestroy } from 'svelte';
+	import { onCloudCannonChanges, stopCloudCannonChanges } from '$lib/cloudcannon.js';
 
 	export let posts, pageDetails;
+
+	onMount(async () => {
+		onCloudCannonChanges((newProps) => pageDetails = newProps);
+	});
+
+	onDestroy(async () => {
+		stopCloudCannonChanges();
+	});
 </script>
 
 
