@@ -14,12 +14,22 @@
 </script>
 
 <script>
+	import { onDestroy, onMount } from 'svelte';
+	import { onCloudCannonChanges, stopCloudCannonChanges } from '@cloudcannon/svelte-connector';
 	import Page from '$lib/components/Page.svelte';
 	import AuthorCard from '$lib/components/AuthorCard.svelte';
 	import PostSummary from '$lib/components/PostSummary.svelte'
 	import PostDetails from '$lib/components/PostDetails.svelte'
 
 	export let pageDetails, author, nextPost;
+
+	onMount(async () => {
+		onCloudCannonChanges((newProps) => pageDetails = newProps);
+	});
+
+	onDestroy(async () => {
+		stopCloudCannonChanges();
+	});
 </script>
 
 <Page {pageDetails}>

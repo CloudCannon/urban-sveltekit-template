@@ -12,10 +12,20 @@ export async function load({ fetch }) {
 </script>
 
 <script>
+	import { onDestroy, onMount } from 'svelte';
+	import { onCloudCannonChanges, stopCloudCannonChanges } from '@cloudcannon/svelte-connector';
 	import Page from '$lib/components/Page.svelte';
 	import siteData from '@content/data/site.json';
 
 	export let pageDetails, clients;
+
+	onMount(async () => {
+		onCloudCannonChanges((newProps) => pageDetails = newProps);
+	});
+
+	onDestroy(async () => {
+		stopCloudCannonChanges();
+	});
 </script>
 
 <Page {pageDetails}>

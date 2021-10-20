@@ -15,7 +15,18 @@
 
 <script>
 	import Page from '$lib/components/Page.svelte';
+	import { onDestroy, onMount } from 'svelte';
+	import { onCloudCannonChanges, stopCloudCannonChanges } from '@cloudcannon/svelte-connector';
+
 	export let pageDetails;
+
+	onMount(async () => {
+		onCloudCannonChanges((newProps) => pageDetails = newProps);
+	});
+
+	onDestroy(async () => {
+		stopCloudCannonChanges();
+	});
 </script>
 
 
