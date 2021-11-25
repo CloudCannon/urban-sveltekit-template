@@ -9,6 +9,8 @@ Urban was made by [CloudCannon](https://cloudcannon.com/), a Jamstack platform f
 
 Find more templates, themes and tutorials at [CloudCannon Academy](https://learn.cloudcannon.com/).
 
+[![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/CloudCannon/urban-sveltekit-template)
+
 ## Features
 
 * FrontMatter live editing
