@@ -4,22 +4,5 @@
 	"description": "Urban is a strong foundation for the web presence of your agency.",
 	"author": "",
 	"author_email": "",
-	"images": [],
-	"_array_structures": {
-		"images": {
-			"style": "select",
-			"values": [
-				{
-					"label": "Image",
-					"icon": "image",
-					"value": {
-						"image": "",
-						"description": "",
-						"height": 0,
-						"width": 0
-					}
-				}
-			]
-		}
-	}
+	"images": []
 }

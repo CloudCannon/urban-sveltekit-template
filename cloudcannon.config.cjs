@@ -3,6 +3,24 @@ module.exports = {
     social_icons: ['Facebook', 'Instagram', 'LinkedIn', 'Pinterest', 'Tumblr', 'Twitter', 'Youtube', 'RSS']
   },
 
+  _structures: {
+    images: {
+			style: "select",
+			values: [
+				{
+					label: "Image",
+					icon: "image",
+					value: {
+						image: "",
+						description: "",
+						height: 0,
+						width: 0
+					}
+				}
+			]
+		}
+  },
+
   paths: {
     collections: 'content',
     data: 'content/data',
