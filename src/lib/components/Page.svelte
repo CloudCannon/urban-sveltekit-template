@@ -46,14 +46,14 @@
 <section class="hero diagonal">
 	<div class="container">
 		<slot name="heading">
-			<h2>{ heading }</h2>
+			<h2 data-cms-bind="#heading">{ heading }</h2>
 		</slot>
 
 		{#if pageDetails.subtitle }
-		<p class="subtext">{ pageDetails.subtitle }</p>
+		<p class="subtext" data-cms-bind="#subtitle">{ pageDetails.subtitle }</p>
 		{/if}
 		{#if pageDetails.subtext_html }
-		<p class="subtext">{@html pageDetails.subtext_html }</p>
+		<p class="subtext" data-cms-bind="#subtext_html">{@html pageDetails.subtext_html }</p>
 		{/if}
 		{#if withContactButton }
 		<p><a class="button alt" href={`${siteData.baseurl}/contact`}>Contact Us</a></p>
