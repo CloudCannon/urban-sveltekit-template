@@ -1,4 +1,4 @@
-# Urban
+# Urban [ LEGACY TEMPLATE NO LONGER MAINTAINED ]
 
 Web Agency themed business template for SvelteKit. Browse through a [live demo](https://dry-duck.cloudvent.net).
 Increase the web presence of your agency with this configurable theme.
